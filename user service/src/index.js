@@ -1,7 +1,8 @@
-require('dotenv').config();
+require('dotenv').config(); // This should be at the top of the file
+console.log('Mongo URI:', process.env.MONGO_URI);
 const express = require('express');
-const userRoutes = require('./src/routes/userRoutes');
-const { connectDB } = require('./src/config/database');
+const userRoutes = require('./routes/userRoutes');  // Correct relative path
+const { connectDB } = require('./config/database'); 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
